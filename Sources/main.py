@@ -47,13 +47,20 @@ class MainForm(QWidget, Ui_MainForm):
                         parent=self).show()
             return
 
-        res_vec = vectors_mult(v1, v2)
-        if res_vec is None:
+        if self.radio_elementwise.isChecked():
+            res = vectors_mult(v1, v2)
+        else:
+            res = vectors_dot_mult(v1, v2)
+
+        if res is None:
             QMessageBox(text='Вычислительная ошибка',
                         parent=self).show()
             return
 
-        self.result_line.setText(self.vec_to_str(res_vec))
+        if isinstance(res, Iterable):
+            self.result_line.setText(self.vec_to_str(res))
+        else:
+            self.result_line.setText(str(res))
 
 
 def vectors_mult(v1: List[float], v2: List[float]) \
