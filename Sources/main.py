@@ -10,9 +10,12 @@ from ui_MainForm import Ui_MainForm
 class MainForm(QWidget, Ui_MainForm):
 
     def __init__(self, parent=None):
+
         super().__init__(parent)
         self.setupUi(self)
+
         self.solve_button.clicked.connect(self.solve)
+        self.radio_vector.toggled.connect(self.radio_checking)
 
     @staticmethod
     def str_to_vec(s: str) -> Union[List[float], None]:
@@ -61,6 +64,10 @@ class MainForm(QWidget, Ui_MainForm):
             self.result_line.setText(self.vec_to_str(res))
         else:
             self.result_line.setText(str(res))
+
+    def radio_checking(self):
+        if self.input1_line.text() and self.input2_line.text():
+            self.solve()
 
 
 def vectors_mult(v1: List[float], v2: List[float]) \
