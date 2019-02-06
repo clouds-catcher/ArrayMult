@@ -64,4 +64,3 @@ class MainForm(QWidget, Ui_MainForm):
             self.result_line.setText(self.vec_to_str(res))
         else:
             self.result_line.setText(str(res))
-

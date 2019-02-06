@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file '/home/lain/Documents/Projects/PyCharm/TestEnvGit/UIFiles/MainForm.ui',
 # licensing of '/home/lain/Documents/Projects/PyCharm/TestEnvGit/UIFiles/MainForm.ui' applies.
 #
-# Created: Wed Feb  6 22:55:57 2019
+# Created: Wed Feb  6 23:03:46 2019
 #      by: pyside2-uic  running on PySide2 5.11.2
 #
 # WARNING! All changes made in this file will be lost!
