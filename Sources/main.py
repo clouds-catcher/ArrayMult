@@ -66,6 +66,17 @@ def vectors_mult(v1: List[float], v2: List[float]) \
         return None
 
 
+def vectors_dot_mult(v1: List[float], v2: List[float]) \
+        -> Union[Iterable, None]:
+
+    try:
+        return np.dot(np.array(v1, dtype=np.float64),
+                      np.array(v2, dtype=np.float64)
+                      ).tolist()
+    except:
+        return None
+
+
 def __main():
     app = QApplication(sys.argv)
     app.setStyle('Fusion')

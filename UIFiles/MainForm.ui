@@ -42,6 +42,9 @@
      <height>27</height>
     </rect>
    </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -136,11 +139,49 @@
      <bool>false</bool>
     </property>
    </widget>
-   <zorder>input1_line</zorder>
-   <zorder>radio_elementwise</zorder>
-   <zorder>radio_vector</zorder>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>radio_elementwise</tabstop>
+  <tabstop>radio_vector</tabstop>
+  <tabstop>input1_line</tabstop>
+  <tabstop>input2_line</tabstop>
+  <tabstop>solve_button</tabstop>
+  <tabstop>result_line</tabstop>
+ </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>input1_line</sender>
+   <signal>returnPressed()</signal>
+   <receiver>solve_button</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>152</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>input2_line</sender>
+   <signal>returnPressed()</signal>
+   <receiver>solve_button</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>206</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>206</x>
+     <y>174</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

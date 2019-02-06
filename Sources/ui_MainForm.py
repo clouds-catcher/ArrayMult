@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'UIFiles/MainForm.ui',
 # licensing of 'UIFiles/MainForm.ui' applies.
 #
-# Created: Wed Feb  6 16:33:37 2019
+# Created: Wed Feb  6 16:48:14 2019
 #      by: pyside2-uic  running on PySide2 5.12.1
 #
 # WARNING! All changes made in this file will be lost!
@@ -22,6 +22,7 @@ class Ui_MainForm(object):
         self.input2_line.setObjectName("input2_line")
         self.result_line = QtWidgets.QLineEdit(MainForm)
         self.result_line.setGeometry(QtCore.QRect(8, 188, 381, 27))
+        self.result_line.setReadOnly(True)
         self.result_line.setObjectName("result_line")
         self.label = QtWidgets.QLabel(MainForm)
         self.label.setGeometry(QtCore.QRect(171, 106, 54, 17))
@@ -55,7 +56,14 @@ class Ui_MainForm(object):
         self.radio_vector.setObjectName("radio_vector")
 
         self.retranslateUi(MainForm)
+        QtCore.QObject.connect(self.input1_line, QtCore.SIGNAL("returnPressed()"), self.solve_button.click)
+        QtCore.QObject.connect(self.input2_line, QtCore.SIGNAL("returnPressed()"), self.solve_button.click)
         QtCore.QMetaObject.connectSlotsByName(MainForm)
+        MainForm.setTabOrder(self.radio_elementwise, self.radio_vector)
+        MainForm.setTabOrder(self.radio_vector, self.input1_line)
+        MainForm.setTabOrder(self.input1_line, self.input2_line)
+        MainForm.setTabOrder(self.input2_line, self.solve_button)
+        MainForm.setTabOrder(self.solve_button, self.result_line)
 
     def retranslateUi(self, MainForm):
         MainForm.setWindowTitle(QtWidgets.QApplication.translate("MainForm", "Vectors multiplication", None, -1))
